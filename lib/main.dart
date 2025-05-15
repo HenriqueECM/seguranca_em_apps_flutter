@@ -40,6 +40,7 @@ class _segurancaAppState extends State<segurancaApp> {
             decoration: const InputDecoration(
               labelText: 'Email *',
               border: OutlineInputBorder(), // borda retangular
+              prefixIcon: Icon(Icons.email)
             ),
             validator: (String? value) {
               return (value == null || !value.contains('@')) ? 'O campo deve conter o caractere @.' : null;
@@ -52,9 +53,10 @@ class _segurancaAppState extends State<segurancaApp> {
             decoration: const InputDecoration(
               labelText: 'Senha *',
               border: OutlineInputBorder(), // borda retangular
+              prefixIcon: Icon(Icons.key)
             ),
             validator: (String? value) {
-              return (value == null || !value.contains('@')) ? 'O campo deve conter o caractere @.' : null;
+              return (value == null && value!.isNotEmpty) ? 'Senha inválida' : null;
             },
           )
         ],
